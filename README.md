@@ -7,7 +7,6 @@
 |email     |string  |not null     |
 |password  |string  |not null     |
 |name      |string  |not null     |
-|profile   |text    |not null     |
 |address   |text    |not null     |
 |birthday  |text    |not null     | 
 
