@@ -3,13 +3,14 @@
 ## usersテーブル
 | Column             | Type   | Options     |
 | -------------------| ------ | ----------- |
-|email               |string  |not null     |
-|encrypted_password  |string  |not null     |
-|fastname            |string  |not null     |
-|secondname          |string  |not null     |
-|fastname_kana       |string  |not null     |
-|secondname_kana     |string  |not null     |
-|birthday            |date    |not null     | 
+|nickname            |string  |null: false  |
+|email               |string  |null: false  |
+|encrypted_password  |string  |null: false  |
+|fastname            |string  |null: false  |
+|secondname          |string  |null: false  |
+|fastname_kana       |string  |null: false  |
+|secondname_kana     |string  |null: false  |
+|birthday            |date    |null: false  | 
 
 ### Association
 * has_many :sitems
@@ -18,19 +19,21 @@
 
 
 ## sitemsテーブル(出品テーブル)
-| Column   | Type       | Options     |
-| -------- | -----------| ----------- |
-|name      |string      |not null     |
-|exposition|text        |not null     |
-|category  |integer     |not null     |
-|condition |integer     |not null     |
-|delivery  |integer     |not null     |
-|area      |integer     |not null     |
-|price     |integer     |not null     |
+| Column      | Type       | Options         |
+| ----------- | -----------| --------------- |
+|name         |string      |null: false      |
+|exposition   |text        |null: false      |
+|category_id  |integer     |null: false      |
+|condition_id |integer     |null: false      |
+|delivery_id  |integer     |null: false      |
+|area_id      |integer     |null: false      |
+|price        |integer     |null: false      |
+|day_id       |integer     | null: false     |
+|user         |references  |foreign_key: true|
 
 ### Association
 - belongs_to :user
-* has_one :citems
+* has_one    :citem
 
 
 
@@ -42,19 +45,21 @@
 
 ### Association
 - belongs_to :user
-* has_one :address
+* has_one    :address
+- belongs_to :sitem
 
 
 
 ## address（住所）
-| Column     | Type       | Options     |
-| ---------- | -----------| ----------- |
-|postalcode  |integer     |not null     |
-|prefecture  |string      |not null     |
-|municipality|string      |not null     |
-|address     |string      |not null     |
-|building    |string      |             |
-|phoen       |string      |not null     |
+| Column      | Type       | Options         |
+| ----------- | -----------| --------------- |
+|postalcode   |string      |null: false      |
+|prefecture_id|integer     |null: false      |
+|municipality |string      |null: false      |
+|address      |string      |null: false      |
+|building     |string      |                 |
+|phone        |string      |null: false      |
+|citem        |eferences   |foreign_key: true|
 
 
 ### Association
