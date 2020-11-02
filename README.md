@@ -9,7 +9,6 @@
 |name      |string  |not null     |
 |profile   |text    |not null     |
 |address   |text    |not null     |
-|credit    |text    |not null     |
 |birthday  |text    |not null     | 
 
 ## itemsテーブル
