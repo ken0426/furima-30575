@@ -2,13 +2,13 @@
 
 ## usersテーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-|email     |string  |not null     |
-|password  |string  |not null     |
-|name      |string  |not null     |
-|address   |text    |not null     |
-|birthday  |text    |not null     | 
+| Column             | Type   | Options     |
+| -------------------| ------ | ----------- |
+|email               |string  |not null     |
+|encrypted_password  |string  |not null     |
+|name                |string  |not null     |
+|address             |text    |not null     |
+|birthday            |text    |not null     | 
 
 ## itemsテーブル
 
