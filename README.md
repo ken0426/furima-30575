@@ -15,11 +15,16 @@
 
 | Column   | Type       | Options     |
 | -------- | -----------| ----------- |
-|title     |string      |not null     |
+|title     |text        |not null     |
 |category  |text        |not null     |
 |image     |ActibeStrage|not null     |
-|user      |references  |not null     |
+|user      |text        |not null     |
 |condition |text        |not null     |
+|charge    |text        |not null     | 
+|area      |text        |not null     |
+|days      |text        |not null     |
+|exposition|text        |not null     |
+|price     |text        |not null     |
 
 ## commmentsテーブル
 
