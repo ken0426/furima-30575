@@ -12,7 +12,7 @@
 |credit    |text    |not null     |
 |birthday  |text    |not null     | 
 
-## furimaテーブル
+## itemsテーブル
 
 | Column   | Type       | Options     |
 | -------- | -----------| ----------- |
