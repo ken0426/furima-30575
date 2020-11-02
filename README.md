@@ -6,7 +6,8 @@
 | -------------------| ------ | ----------- |
 |email               |string  |not null     |
 |encrypted_password  |string  |not null     |
-|name                |string  |not null     |
+|fastnam             |string  |not null     |
+|secondname          |string  |not null     |
 |address             |text    |not null     |
 |birthday            |text    |not null     | 
 
