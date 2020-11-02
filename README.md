@@ -1,24 +1,32 @@
-# README
+# FurimaのER図
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+|email     |string  |not null     |
+|password  |string  |not null     |
+|name      |string  |not null     |
+|profile   |text    |not null     |
+|address   |text    |not null     |
+|credit    |text    |not null     |
+|birthday  |text    |not null     | 
 
-* Ruby version
+## furimaテーブル
 
-* System dependencies
+| Column   | Type       | Options     |
+| -------- | -----------| ----------- |
+|title     |string      |not null     |
+|category  |text        |not null     |
+|image     |ActibeStrage|not null     |
+|user      |references  |not null     |
+|condition |text        |not null     |
 
-* Configuration
+## commmentsテーブル
 
-* Database creation
+| Column   | Type       | Options     |
+| -------- | -----------| ----------- |
+|text      |text        |not null     |
+|user      |references  |not null     |
+|furima    |refernces   |not null     |
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
