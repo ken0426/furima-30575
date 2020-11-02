@@ -5,99 +5,57 @@
 | -------------------| ------ | ----------- |
 |email               |string  |not null     |
 |encrypted_password  |string  |not null     |
-|fastname             |string  |not null     |
+|fastname            |string  |not null     |
 |secondname          |string  |not null     |
-|fastname_kana        |string  |not null     |
+|fastname_kana       |string  |not null     |
 |secondname_kana     |string  |not null     |
 |birthday            |date    |not null     | 
 
 ### Association
 * has_many :sitems
 * has_many :citems
-* has_many :address
 
 
 
-
-## sitemsテーブル
+## sitemsテーブル(出品テーブル)
 | Column   | Type       | Options     |
 | -------- | -----------| ----------- |
 |name      |string      |not null     |
 |exposition|text        |not null     |
-|category_id(active_hash)|integer     |not null     |
-|condition_id(active_hash) |integer    |not null     |
-|charge_id(active_hash)    |integer     |not null     |
-|area_id(active_hash)      |integer     |not null     |
-|days_id(active_hash)      |integer     |not null     |
+|category  |integer     |not null     |
+|condition |integer     |not null     |
+|delivery  |integer     |not null     |
+|area      |integer     |not null     |
 |price     |integer     |not null     |
 
 ### Association
-- belongs_to :users
+- belongs_to :user
+* has_one :citems
 
 
 
-## citemsテーブル
-| Column   | Type       | Options     |
-| -------- | -----------| ----------- |
-|user      |integer     |foreign_key: true     |
-|price     |integer     |not null     |
-
-### Association
-- belongs_to :users
-
-
-
-
-## address
-| Column   | Type       | Options     |
-| -------- | -----------| ----------- |
-|postal_code|integer    |not null     |
-|prefectures|string     |not null     |
-|municipality|string    |not null     |
-|address   |string      |not null     |
-|building_name|string   |not null     |
-|phoen     |integer     |not null     |
+## citemsテーブル（購入テーブル）
+| Column   | Type       | Options         |
+| -------- | -----------| --------------- |
+|sitem     |references  |foreign_key: true|
+|user      |references  |foreign_key: true|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
+* has_one :address
 
 
-<!-- ## usersテーブル
 
-| Column 
-|メール
-|パスワード
-|苗字 
-|下の名前 
-|苗字読み方
-|下の名前読み方
-|生年月日  -->
-
-<!-- ## 出品itemsテーブル
-
-| Column 
-|商品名 Ok
-|商品説明 ok
-|カテゴリー (値が変わらない物) OK
-|品質       (値が変わらない物) OK
-|配送料の負担 ok
-|地域 ok
-|日数 ok
-|価格   OK -->
+## address（住所）
+| Column     | Type       | Options     |
+| ---------- | -----------| ----------- |
+|postalcode  |integer     |not null     |
+|prefecture  |string      |not null     |
+|municipality|string      |not null     |
+|address     |string      |not null     |
+|building    |string      |             |
+|phoen       |string      |not null     |
 
 
-<!-- ## 購入itemsテーブル
-
-|商品名
-|画像
-|価格
-|ユーザー -->
-
-<!-- ## 住所テーブル
-
-|郵便番号
-|都道府県（値が変わらない物）
-|市区町村
-|番地
-|建物名
-|電話番号 -->
+### Association
+- belongs_to :citem
