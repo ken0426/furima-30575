@@ -33,20 +33,20 @@
 
 ### Association
 - belongs_to :user
-* has_one    :citem
+* has_one    :order
 
 
 
 ## ordersテーブル（購入テーブル）
 | Column   | Type       | Options         |
 | -------- | -----------| --------------- |
-|sitem     |references  |foreign_key: true|
+|item      |references  |foreign_key: true|
 |user      |references  |foreign_key: true|
 
 ### Association
 - belongs_to :user
 * has_one    :address
-- belongs_to :sitem
+- belongs_to :item
 
 
 
@@ -59,8 +59,8 @@
 |address      |string      |null: false      |
 |building     |string      |                 |
 |phone        |string      |null: false      |
-|citem        |eferences   |foreign_key: true|
+|order        |references   |foreign_key: true|
 
 
 ### Association
-- belongs_to :citem
+- belongs_to :order
