@@ -13,12 +13,12 @@
 |birthday            |date    |null: false  | 
 
 ### Association
-* has_many :sitems
-* has_many :citems
+* has_many :items
+* has_many :orders
 
 
 
-## sitemsテーブル(出品テーブル)
+## itemsテーブル(出品テーブル)
 | Column      | Type       | Options         |
 | ----------- | -----------| --------------- |
 |name         |string      |null: false      |
@@ -37,7 +37,7 @@
 
 
 
-## citemsテーブル（購入テーブル）
+## ordersテーブル（購入テーブル）
 | Column   | Type       | Options         |
 | -------- | -----------| --------------- |
 |sitem     |references  |foreign_key: true|
