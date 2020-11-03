@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-03T07:40:08.459Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.6.5" etag="urpP4L2kRhtvv5kaptky">
+<mxfile host="65bd71144e" modified="2020-11-03T08:00:30.274Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.6.5" etag="TZwGhe7UalEebghK8eX1">
     <diagram id="p2QM8TS0K5t_YSqmhB2u" name="ページ1">
-        <mxGraphModel dx="1105" dy="755" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1105" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -274,7 +274,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="172" value="購入管理テーブル" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#000000;strokeWidth=3;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="600" width="340" height="160" as="geometry"/>
+                    <mxGeometry x="40" y="600" width="340" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="173" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="172">
                     <mxGeometry y="30" width="340" height="30" as="geometry"/>
@@ -303,25 +303,16 @@
                 <mxCell id="321" value="ユーザー管理情報/references/foreign_key: true" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="319">
                     <mxGeometry x="60" width="280" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="179" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="172">
-                    <mxGeometry y="120" width="340" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="180" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="179">
-                    <mxGeometry width="60" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="181" value="ユーザー管理情報/references/foreign_key: true" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="179">
-                    <mxGeometry x="60" width="280" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="322" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERone;endFill=1;entryX=0.003;entryY=-0.101;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="176" target="295">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="420" y="490" as="sourcePoint"/>
                         <mxPoint x="460" y="360" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="323" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;endArrow=ERone;endFill=1;rounded=1;startFill=1;editable=1;entryX=-0.003;entryY=0.533;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="240" target="179">
+                <mxCell id="323" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;endArrow=ERone;endFill=1;rounded=1;startFill=1;editable=1;entryX=-0.001;entryY=0.807;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="240" target="319">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="440" y="930" as="sourcePoint"/>
-                        <mxPoint x="412" y="732" as="targetPoint"/>
+                        <mxPoint x="38.98000000000002" y="735.99" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
