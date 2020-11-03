@@ -4,15 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # validates :nickname, true
-  # validates :email, true
-  # validates :encrypted_password, true
-  # validates :fastname, true
-  # validates :secondname, true
-  # validates :fastname_kana, true
-  # validates :secondname_kana, true
-  # validates :birthday, true
+  validates :nickname, true
+  validates :email, true
+  validates :encrypted_password, true
+  validates :fastname, true
+  validates :secondname, true
+  validates :fastname_kana, true
+  validates :secondname_kana, true
+  validates :birthday, true
 
-  # has_many :items
-  # has_many :orders
+  has_many :items
+  has_many :orders
 end
