@@ -5,12 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates :password, presence: true, length: { minimum: 6}, format: { with: PASSWORD_REGEX}
-
+  
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/
-  validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}
-  validates :nickname, presence: true
   with_options presence: true do
+    validates :nickname, presence: true
+    validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}
+    validates :password, presence: true, length: { minimum: 6}, format: { with: PASSWORD_REGEX}
       validates :fastname, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
       validates :secondname, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
       validates :fastname_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters."}
