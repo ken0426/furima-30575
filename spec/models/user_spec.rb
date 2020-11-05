@@ -57,6 +57,18 @@ RSpec.describe User, type: :model do
           expect(@user.errors.full_messages).to include("Secondname can't be blank")
         end
 
+        it "苗字のカタカナが空の時" do
+          @user.fastname_kana = nil
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Fastname kana is invalid. Input full-width katakana characters.")
+        end
+        
+        it "下の名前のカタカナが空の時" do
+          @user.secondname_kana = nil
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Secondname kana is invalid. Input full-width katakana characters.")
+        end
+
         it "苗字の振り仮名がカタカナ以外の時" do
           @user.fastname_kana = 'あああああ'
           @user.valid?
