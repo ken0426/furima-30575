@@ -15,8 +15,8 @@ class User < ApplicationRecord
       validates :secondname, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
       validates :fastname_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters."}
       validates :secondname_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters."}
+      validates :birthday, presence: true
     end
-  validates :birthday, presence: true
 
   has_many :items
   # has_many :orders
