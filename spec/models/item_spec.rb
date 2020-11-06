@@ -36,33 +36,33 @@ RSpec.describe Item, type: :model do
         end
 
         it "「カテゴリー」が未選択の時(IDが'1'の時)" do
-          @item.category_id = nil
+          @item.category_id = 1
           @item.valid?
-          expect(@item.errors.full_messages).to include("Category can't be blank")
+          expect(@item.errors.full_messages).to include("Category must be other than 1")
         end
 
-        it "「商品の品質」が未選択の時" do
+        it "「商品の品質」が未選択の時(IDが'1'の時)" do
           @item.condition_id = 1
           @item.valid?
           expect(@item.errors.full_messages).to include("Condition must be other than 1")
         end
 
-        it "「配送料の負担」が未選択の時" do
-          @item.delivery_id = nil
+        it "「配送料の負担」が未選択の時(IDが'1'の時)" do
+          @item.delivery_id = 1
           @item.valid?
-          expect(@item.errors.full_messages).to include("Delivery can't be blank")
+          expect(@item.errors.full_messages).to include("Delivery must be other than 1")
         end
 
-        it "「配送元の元の地域」が未選択の時" do
-          @item.area_id = nil
+        it "「配送元の元の地域」が未選択の時(IDが'1'の時)" do
+          @item.area_id = 1
           @item.valid?
-          expect(@item.errors.full_messages).to include("Area can't be blank")
+          expect(@item.errors.full_messages).to include("Area must be other than 1")
         end
 
-        it "「配送までの日数」が未選択の時" do
-          @item.day_id = nil
+        it "「配送までの日数」が未選択の時(IDが'1'の時)" do
+          @item.day_id = 1
           @item.valid?
-          expect(@item.errors.full_messages).to include("Day can't be blank")
+          expect(@item.errors.full_messages).to include("Day must be other than 1")
         end
 
         it "「価格」が空の時" do
