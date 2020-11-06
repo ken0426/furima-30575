@@ -18,6 +18,9 @@ RSpec.describe Item, type: :model do
       context '出品ができない時' do
 
         it "「商品画像」が選択されていない時" do
+          @item.name = nil
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Name can't be blank")
         end
 
         it "「商品名」が空の時" do
@@ -32,16 +35,16 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include("Exposition can't be blank")
         end
 
-        it "「カテゴリー」が未選択の時" do
+        it "「カテゴリー」が未選択の時(IDが'1'の時)" do
           @item.category_id = nil
           @item.valid?
           expect(@item.errors.full_messages).to include("Category can't be blank")
         end
 
         it "「商品の品質」が未選択の時" do
-          @item.condition_id = nil
+          @item.condition_id = 1
           @item.valid?
-          expect(@item.errors.full_messages).to include("Condition can't be blank")
+          expect(@item.errors.full_messages).to include("Condition must be other than 1")
         end
 
         it "「配送料の負担」が未選択の時" do
@@ -75,7 +78,7 @@ RSpec.describe Item, type: :model do
         end
 
         it "「価格」の入力が0円〜299円の場合" do
-          @item.price = 50
+          @item.price = 299
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not included in the list")
         end
@@ -84,6 +87,12 @@ RSpec.describe Item, type: :model do
           @item.price = 10000000
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not included in the list")
+        end
+
+        it "「価格」の数字が全角の時" do
+          @item.price = "１１１"
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters.")
         end
 
       end
