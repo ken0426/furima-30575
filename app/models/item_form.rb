@@ -10,7 +10,6 @@ class ItemForm
    validates :area_id
    validates :municipality
    validates :address
-  #  validates :building
    validates :area_id, numericality: { other_than: 1 } 
    validates :phone, numericality: { with: /\A[0-9]+\z/, message: "is invalid. Input half-width characters."}
   end

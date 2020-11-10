@@ -15,6 +15,11 @@ RSpec.describe ItemForm, type: :model do
         it "必須項目を入力し、商品が購入できる" do
           expect(@order).to be_valid
         end
+
+        it "建物名が入力されていなくても保存できる" do
+          @order.building = nil
+          expect(@order).to be_valid
+        end
       end
 
       context '商品購入ができない時' do
