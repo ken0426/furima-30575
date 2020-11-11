@@ -7,7 +7,6 @@ class ItemForm
    validates :item_id
    validates :user_id
    validates :postalcode, format: {with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Input half-width characters."}
-   validates :area_id
    validates :municipality
    validates :address
    validates :area_id, numericality: { other_than: 1 } 
