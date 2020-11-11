@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  
-  # before_action :basic_auth デフォルトの記載
+  before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
   # ↑これはデバイスのコントローラーが読み込まれた時に、それを保存するというもの。
   # そして、下のプライベートメソッドによって、その情報がデータベースに転送される
