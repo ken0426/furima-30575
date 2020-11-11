@@ -35,6 +35,12 @@ RSpec.describe ItemForm, type: :model do
             expect(@order.errors.full_messages).to include("Area must be other than 1")
           end
 
+          it "都道府県が空の時" do
+            @order.area_id = nil
+            @order.valid?
+            expect(@order.errors.full_messages).to include("Area can't be blank", "Area is not a number")
+          end
+
           it "市区町村が空の時" do
             @order.municipality = nil
             @order.valid?
